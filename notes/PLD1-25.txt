@@ -1,0 +1,163 @@
+January 25, 2023
+is compares memory location
+== compares values
+if not isinstance(a, (""[this is a tuple]"" int, float)) is better way to do type() is not int(etc)
+
+
+Tests
+doc tests are unit testS: taking smallest piece of code and testing for every edge case possible
+
+empty tuples all point to the same location
+    identical tuples do not
+
+string literal is looked for in a different memory location when compiling
+    A = "Best"      A and B are in the same memory location
+    B = "Best"
+    a is B
+    true
+if you create the string procedurally the compiler assigns it a place in memory separate from a string literal
+    b = ''.join(["B", "E", "S", "T"]) <--- procedurally. [] BEST is a list
+python lists are just linked lists behind the scenes
+
+tuples are immutable
+
+How 'is' works:
+def is(a, b):
+    return id(a) == id(b)
+
+Minor Differences in syntax:
+for row in matrix  ----> will look through the matrix
+    [1,2]
+    [3,4]
+
+    -looks at the location of the variable in the matrix
+
+    OR
+
+for (row in range(len(natrix)))
+
+    - rows value is an int
+
+for ([1,2],[3,4]) -------> will look through one set
+    ([1,2],[3,4])
+
+Test Driven Development:
+
+Trace Back
+make a call to your function and made an exception
+     Stack:
+        myfunction()
+            theirfunction()
+            someother()
+            main()
+                if --name__ = 
+
+                everything in the middled is tracing where the error happened 
+                syntax error traces back to python3 files : unknown syntax error code
+
+python 3 -m UnitTest -v tests/blah.py | cat -e
+    use this to compile 
+
+Task 0:
+Tests doc tests. doc txt file in runf -v for full output python3 -m to run doctest module 
+doctest looking for python interactive terminal looking for >>>
+define some objexts to test it with like a list
+    list that you know failed list_testF = [[1,2][1,2,3]]
+lookiing for where things get weird
+look for things they specify in the task to figure out where to start
+     0: interger casting ---> 1.2 = 1
+        throw in some values that you know would be rounded such as 1.2
+        int (a) -> floor meaning 1.5 will be 1
+        round(a) -> 1.5 comes out as 2
+        difference between float and double = memory size, exact numbers: double
+        J is the square root of -1 or i in math in Python
+     1: type ---> D + 2 = error
+     2: regular addition ---> 1 + 1 = 2
+     3: float overflow
+         a = (round(a) if instance(a, int, float)) Else none)
+            if a is none:
+                TypeError
+     4: cannot convert float ---> (NaN) to int- NAN is not a numbers
+     5: missing 1args
+     6: missing 2args
+
+Task 1:
+    1: missing 1args
+    2: missing 2args
+    3: matrix = lists of lists
+        div = int
+    4: matrix = list of list of ints
+        div = string
+            TypeError
+    5: matrix = list of list of ints
+        div = 0
+    6: matrix = jagged list
+        div = int
+        find the variable = to npne if last was not none and not equal to current last throw a fit 
+    7: matrix = list of list of ints
+        div = float
+    8: matrix = list of list of with on floor (inf)
+        div = int
+    9: matrix = list of list of ints with one floats(inf)
+        div = float(inf/NaN)
+
+Task 2:
+    1: first = string / last = string
+    2: first = string / last != string
+    3: first != string / last = string
+    4: missing 2 args
+
+Task 5 file 6:
+    doc test module and unit test module is unit testing    
+        unit testing is testing EVERY UNIT of your code. different than implementation testing
+    python3 -m unittest -v tests/filename.py (-m)runs module as a script
+        -m runs code from top to bottom also when you import things
+        variabole __name__ will be assigned to "__main__": then call a function
+            if __name__ == "__main__" will run as a script
+            __name__ variable is assigned to every module
+        double _ is a dunder
+
+general tests to think about:
+    max at end
+    max at beginning
+    max in middledone negative
+    all negative 
+    list one element
+    list empty
+
+import unit test
+define test class 
+import TestCase from UnitTest -> *look this up more*
+should start with test_blahblahblah(self):
+    class TestMaxInt(unittest.test(use))
+        inheritance class is in () after the name of the class 
+            ex.
+                class something(this-is-the-class-it-will-inherit)
+
+    def test_one_int(self):
+        self.assertEqual(max_int([5]), 5)
+
+        second arg is expected results
+
+        OR
+    def test_typetests(self):
+        self.ssertRaises(TypeError, max_int, none)
+        self.assertRaises(TypeError, max_int, none)
+            (what it raises, the method, the args)
+
+Tangent
+when number get closer to 257 they get weird
+     a = 256
+     b = 256
+     a is B
+
+     c = 257
+     d = 257
+     c is not d ---> because is checks the location in memory
+     256 ints are stored in the static memory for saving processing time
+
+isinstance will take a tuple
+
+the journey to infinity on Netflix
+
+*look up what ... means in python and __name__
