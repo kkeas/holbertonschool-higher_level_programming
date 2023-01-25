@@ -55,8 +55,11 @@ make a call to your function and made an exception
                 everything in the middled is tracing where the error happened 
                 syntax error traces back to python3 files : unknown syntax error code
 
+Compiling:
+
 python 3 -m UnitTest -v tests/blah.py | cat -e
-    use this to compile 
+python3 -m unittest -v tests/filename.py (-m)runs module as a script
+    -m runs code from top to bottom also when you import things
 
 Task 0:
 Tests doc tests. doc txt file in runf -v for full output python3 -m to run doctest module 
@@ -65,6 +68,7 @@ define some objexts to test it with like a list
     list that you know failed list_testF = [[1,2][1,2,3]]
 lookiing for where things get weird
 look for things they specify in the task to figure out where to start
+
      0: interger casting ---> 1.2 = 1
         throw in some values that you know would be rounded such as 1.2
         int (a) -> floor meaning 1.5 will be 1
@@ -145,7 +149,7 @@ should start with test_blahblahblah(self):
         self.assertRaises(TypeError, max_int, none)
             (what it raises, the method, the args)
 
-Tangent
+Tangents
 when number get closer to 257 they get weird
      a = 256
      b = 256
