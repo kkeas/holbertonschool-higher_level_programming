@@ -1,2 +1,2 @@
 -- LIST VALUES
-SELCT * FROM first_table;
+SELECT * FROM first_table;
