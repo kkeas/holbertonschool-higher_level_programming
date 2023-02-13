@@ -1,2 +1,2 @@
 -- ALL INFO FROM SECOND_TABLE
-SELECT * FROM second_table WHERE *;
+SELECT * FROM second_table;
