@@ -5,11 +5,14 @@ CREATE TABLE IF NOT EXISTS second_table (
     score INT
 );
 
-INSERT INTO second_table (id)
-VALUES (1, 2, 3, 4);
+INSERT INTO second_table (id, name, score)
+VALUES (1, "John", 10);
 
-INSERT INTO second_table (name)
-VALUES ("John", "Alex", "Bob", "George");
+INSERT INTO second_table (id, name, score)
+VALUES (2, "Alex", 3);
 
-INSERT INTO second_table (score)
-VALUES (10, 3, 14, 8);
+INSERT INTO second_table (id, name, score)
+VALUES (3, "Bob", 14);
+
+INSERT INTO second_table (id, name, score)
+VALUES (3, "George", 8);
