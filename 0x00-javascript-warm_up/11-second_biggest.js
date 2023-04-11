@@ -9,7 +9,7 @@ if (args.length === 0) {
 } else {
   let max = args[0];
   let secondMax = args[1];
-  
+
   if (secondMax > max) {
     [max, secondMax] = [secondMax, max];
   }
@@ -22,6 +22,6 @@ if (args.length === 0) {
       secondMax = args[i];
     }
   }
-  
+
   console.log(secondMax);
 }
