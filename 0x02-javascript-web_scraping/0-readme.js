@@ -2,7 +2,9 @@
 
 const fs = require('fs');
 
-fs.readFile('/path/to/file', 'utf8', function(err, data) {
+const filePath = 'cisfun'
+
+fs.readFile(filePath, 'utf8', function(err, data) {
   if (err) throw err;
   console.log(data);
 });
